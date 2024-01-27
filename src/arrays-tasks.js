@@ -636,9 +636,9 @@ function swapHeadAndTail(arr) {
   if (middle < 1) return arr;
   const head = arr.slice(0, middle);
   const tail = arr.slice(-middle);
-  return arr
-    .toSpliced(0, tail.length, ...tail)
-    .toSpliced(-head.length, head.length, ...head);
+  arr.splice(0, tail.length, ...tail);
+  arr.splice(-head.length, head.length, ...head);
+  return arr;
 }
 
 module.exports = {
